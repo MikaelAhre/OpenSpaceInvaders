@@ -29,7 +29,7 @@ public class Enemy {
         y++;
         terminal.moveCursor(x, y);
         if(y <20){
-        terminal.putCharacter('\u0373');
+        terminal.putCharacter('\u3036');
         }
         terminal.moveCursor(0, 0);
 

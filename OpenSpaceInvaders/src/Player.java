@@ -2,8 +2,6 @@ import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.terminal.Terminal;
 
 
-
-
 /**
  * Created by mikael on 6/27/17.
  */
@@ -11,13 +9,15 @@ public class Player {
     String name;
     int x;
     int y;
-   public Object lock;
+    int score;
+    public Object lock;
 
-    Player(String name, int x, int y, Object lock) {
+    Player(String name, int x, int y, int score, Object lock) {
         this.name = name;
         this.x = x;
         this.y = y;
         this.lock = lock;
+        this.score = score;
     }
 
     public int getX() {
@@ -26,6 +26,14 @@ public class Player {
 
     public int getY() {
         return y;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public void setX(int x) {
@@ -52,7 +60,7 @@ public class Player {
         x = getX();
         y = getY();
         terminal.moveCursor(x, y);
-        terminal.putCharacter('\u0394');
+        terminal.putCharacter('\u29CB');
         terminal.moveCursor(0, 0);
     }
 
